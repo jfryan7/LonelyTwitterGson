@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Date;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -23,6 +24,8 @@ public class LonelyTwitterActivity extends Activity {
 	private ArrayList<Tweet> tweets;
 
 	private ArrayAdapter<Tweet> tweetsViewAdapter;
+	
+	private Summary mySummary;
 
 	/** Called when the activity is first created. */
 	@Override
@@ -32,6 +35,7 @@ public class LonelyTwitterActivity extends Activity {
 		setContentView(R.layout.main);
 
 		dataManager = new GsonDataManager(this);
+		mySummary = new Summary();
 
 		bodyText = (EditText) findViewById(R.id.body);
 		oldTweetsList = (ListView) findViewById(R.id.oldTweetsList);
@@ -66,5 +70,60 @@ public class LonelyTwitterActivity extends Activity {
 		tweetsViewAdapter.notifyDataSetChanged();
 		dataManager.saveTweets(tweets);
 	}
-
+	
+	
+	
+	
+	
+	public void showSummary(View v){
+		createSummary();
+    	Intent intent = new Intent(LonelyTwitterActivity.this, SummaryActivity.class);
+    	startActivity(intent);
+		
+		
+	}
+	
+	private void createSummary(){
+		mySummary.setAvgLenTweets(getAverageLength());
+		mySummary.setAvgNumTweets(getAverageNumber());
+			
+	}
+	
+	private long getAverageNumber(){
+		return tweets.size();
+	}
+	
+	private long getAverageLength(){
+		
+		long len = 0;
+		
+		if(tweets.size() == 0){
+			return 0;
+		}
+		
+		for(Tweet t : tweets){
+			String s = t.getTweetBody();
+			len += s.length();
+		}
+		
+		return len/tweets.size();
+	}
+	
+	
+	
+	
+	
+	
 }
+
+
+
+
+
+
+
+
+
+
+
+

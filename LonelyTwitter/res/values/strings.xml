@@ -5,5 +5,13 @@
     <string name="app_name">LonelyTwitter</string>
     <string name="save">Save</string>
     <string name="clear">Clear</string>
-    
+    <string name="title_activity_summary">SummaryActivity</string>
+    <string name="action_settings">Settings</string>
+    <string name="summary">Summary</string>
+	<string name="number_of_tweets">Number of Tweets:</string>
+	<string name="latency_of_tweets">Average Latency of Tweets:</string>
+	<string name="length_of_tweets">Average Length of Tweets:</string>
+
+	
+
 </resources>

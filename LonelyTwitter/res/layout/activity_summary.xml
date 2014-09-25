@@ -1,0 +1,50 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".SummaryActivity" >
+
+    <TextView
+        android:id="@+id/summaryText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:text="@string/summary"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/numberOfTweetsText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/summaryText"
+        android:layout_marginTop="20dp"
+        android:text="@string/number_of_tweets"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/lengthOfTweetsText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/numberOfTweetsText"
+        android:layout_below="@+id/numberOfTweetsText"
+        android:layout_marginTop="107dp"
+        android:text="@string/length_of_tweets"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/latencyOfTweetsText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/lengthOfTweetsText"
+        android:layout_below="@+id/lengthOfTweetsText"
+        android:layout_marginTop="112dp"
+        android:text="@string/latency_of_tweets"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+</RelativeLayout>
